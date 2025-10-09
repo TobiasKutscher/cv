@@ -24,8 +24,8 @@ const hustles = [
     video: null,
     links: [
       {
-        icon: '�',
-        type: 'Website',
+        icon: '🌐',
+        type: '  Website',
         href: 'https://schenkwerk.com'
       }
     ]  
