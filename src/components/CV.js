@@ -31,11 +31,11 @@ const ResumeCard = ({
     };
   
     return (
-      <Card className="px-8 py-6 group relative overflow-hidden transition-all shadow-sm hover:shadow-lg">
+      <Card className="px-4 md:px-8 py-4 md:py-6 group relative overflow-hidden transition-all shadow-sm hover:shadow-lg">
         <Link href={href || '#'} onClick={handleClick}>
           <CardHeader>
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 relative flex-shrink-0">
+            <div className="flex items-center gap-3 md:gap-6">
+              <div className="w-12 h-12 md:w-16 md:h-16 relative flex-shrink-0">
                 <Image
                   src={logoUrl}
                   alt={altText}
@@ -45,13 +45,13 @@ const ResumeCard = ({
                 />
               </div>
               <div className="flex-grow">
-                <h3 className="font-semibold text-black text-lg">{title}</h3>
-                <p className="text-gray-600 text-sm">{subtitle}</p>
-                <p className="text-gray-600 text-sm">{period}</p>
+                <h3 className="font-semibold text-black text-base md:text-lg">{title}</h3>
+                <p className="text-gray-600 text-xs md:text-sm">{subtitle}</p>
+                <p className="text-gray-600 text-xs md:text-sm">{period}</p>
                 {badges && (
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-1 md:gap-2 mt-2">
                     {badges.map((badge, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs text-gray-700">
+                      <Badge key={index} variant="secondary" className="text-xs text-gray-700 px-2 py-1">
                         {badge}
                       </Badge>
                     ))}
@@ -76,8 +76,8 @@ const ResumeCard = ({
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pt-4">
-              <p className="text-gray-700">{description}</p>
+            <div className="pt-3 md:pt-4 px-4 md:px-8">
+              <p className="text-gray-700 text-sm md:text-base">{description}</p>
             </div>
           </motion.div>
         )}
