@@ -24,8 +24,8 @@ const hustles = [
     video: null,
     links: [
       {
-        icon: '🌐',
-        type: '  Website',
+        icon: '�',
+        type: 'Website',
         href: 'https://schenkwerk.com'
       }
     ]  
@@ -70,21 +70,21 @@ function HustleCard({
           />
         ) : null}
       </Link>
-      <CardHeader className="px-6 py-4">
+      <CardHeader className="px-4 md:px-6 py-3 md:py-4">
         <div className="space-y-2">
-          <CardTitle className="text-2xl">{title}</CardTitle>
-          <time className="font-sans text-sm text-muted-foreground">{dates}</time>
-          <Markdown className="prose max-w-full text-pretty font-sans text-base text-muted-foreground dark:prose-invert">
+          <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
+          <time className="font-sans text-xs md:text-sm text-muted-foreground">{dates}</time>
+          <Markdown className="prose max-w-full text-pretty font-sans text-sm md:text-base text-muted-foreground dark:prose-invert">
             {description}
           </Markdown>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-6">
+      <CardContent className="mt-auto flex flex-col px-4 md:px-6">
         {tags && tags.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 md:mt-4 flex flex-wrap gap-1 md:gap-2">
             {tags.map((tag) => (
               <Badge
-                className="px-3 py-1 text-sm"
+                className="px-2 md:px-3 py-1 text-xs md:text-sm"
                 variant="secondary"
                 key={tag}
               >
@@ -94,12 +94,12 @@ function HustleCard({
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-6 pb-6">
+      <CardFooter className="px-4 md:px-6 pb-4 md:pb-6">
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-3">
+          <div className="flex flex-row flex-wrap items-start gap-2 md:gap-3">
             {links.map((link, idx) => (
               <Link href={link.href} key={idx} target="_blank">
-                <Badge variant="outline" key={idx} className="flex gap-2 px-3 py-2 text-sm">
+                <Badge variant="outline" key={idx} className="flex gap-2 px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm">
                   {link.icon}
                   {link.type}
                 </Badge>
@@ -115,7 +115,7 @@ function HustleCard({
 export default function SideHustles() {
   return (
     <div className="mx-auto">
-      <h2 className="mb-12 text-4xl font-bold">🚴 Side Hustles</h2>
+      <h2 className="mb-8 md:mb-12 text-3xl md:text-4xl font-bold">🚴 Side Hustles</h2>
       <div className="flex justify-center">
         <div className="max-w-lg w-full">
           {hustles.map((hustle, index) => (
