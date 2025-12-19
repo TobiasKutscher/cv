@@ -1,6 +1,7 @@
 import { Lato } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Tobias Kutscher - Senior Data Scientist & AI Engineer',
@@ -33,8 +34,15 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className="font-lato">
-        {children}
+      <body className="font-lato min-h-screen flex flex-col">
+        <div className="flex-1">
+          {children}
+        </div>
+        <footer className="w-full border-t border-gray-200 py-4 text-center text-xs text-gray-500">
+          <Link href="/impressum" className="underline hover:text-gray-700">
+            Impressum
+          </Link>
+        </footer>
       </body>
     </html>
   )
