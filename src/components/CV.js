@@ -97,6 +97,23 @@ ResumeCard.propTypes = {
 };
 const workExperiences = [
   {
+    logoUrl: '/bfi_wien_logo.jpg',
+    altText: 'BFI Wien logo',
+    title: 'AI Trainer (AI Agents & Vibe Coding)',
+    subtitle: 'BFI Wien',
+    href: 'https://www.bfi.wien',
+    badges: [
+      'AI Agents',
+      'Vibe Coding',
+      'No-Code / Low-Code',
+      'Process Automation',
+      'E-Learning',
+    ],
+    period: '2024 – Present',
+    description:
+      'Lead instructor and course author for applied AI programs at BFI Wien. Responsible for curriculum design, content development, and delivery of E-Learning courses on AI Agents and Vibe Coding, enabling professionals to build automated workflows and software solutions without traditional programming.',
+  },
+  {
     logoUrl: '/bytebakery.jpg',
     altText: 'ByteBakery UG logo',
     title: 'Co-Founder',

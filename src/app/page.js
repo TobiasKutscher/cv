@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import Profile from '../components/Profile';
 import SideHustles from '../components/SideHustles';
 import Publications from '../components/Publications';
@@ -10,38 +11,47 @@ import ContactCTA from '../components/CTA';
 
 export default function Home() {
   return (
-    <main className="max-w-4xl mx-auto px-10 sm:px-10 lg:px-12 py-16">
-      <div className="space-y-16">
-        <UnblurEffect delay={200}>
-          <div className="profile">
-            <Profile />
-          </div>
-        </UnblurEffect>
+    <>
+      <main className="max-w-4xl mx-auto px-10 sm:px-10 lg:px-12 py-16">
+        <div className="space-y-16">
+          <UnblurEffect delay={200}>
+            <div className="profile">
+              <Profile />
+            </div>
+          </UnblurEffect>
 
-        <UnblurEffect delay={400}>
-          <div className="side-hustles">
-            <SideHustles />
-          </div>
-        </UnblurEffect>
+          <UnblurEffect delay={400}>
+            <div className="side-hustles">
+              <SideHustles />
+            </div>
+          </UnblurEffect>
 
-        <UnblurEffect delay={600}>
-          <div className="publications">
-            <Publications />
-          </div>
-        </UnblurEffect>
+          <UnblurEffect delay={600}>
+            <div className="publications">
+              <Publications />
+            </div>
+          </UnblurEffect>
 
-        <UnblurEffect delay={800}>
-          <div className="cv">
-            <CV />
-          </div>
-        </UnblurEffect>
+          <UnblurEffect delay={800}>
+            <div className="cv">
+              <CV />
+            </div>
+          </UnblurEffect>
 
-        <UnblurEffect delay={1000}>
-          <div className="contact">
-            <ContactCTA />
-          </div>
-        </UnblurEffect>
-      </div>
-    </main>
+          <UnblurEffect delay={1000}>
+            <div className="contact">
+              <ContactCTA />
+            </div>
+          </UnblurEffect>
+        </div>
+      </main>
+      <footer className="max-w-4xl mx-auto px-10 sm:px-10 lg:px-12 py-8 border-t border-gray-200 dark:border-gray-800">
+        <div className="text-center text-sm text-gray-600 dark:text-gray-400">
+          <Link href="/impressum" className="hover:underline">
+            Impressum
+          </Link>
+        </div>
+      </footer>
+    </>
   );
 }

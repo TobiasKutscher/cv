@@ -5,7 +5,6 @@ import { Badge } from "../components/ui/badge";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
@@ -21,14 +20,16 @@ const hustles = [
     dates: '2023 - Present',
     tags: ['SaaS', 'B2B2C', 'Gutscheine', 'Gastro', 'Einzelhandel'],
     image: '/schenkwerk.png',
-    video: null,
-    links: [
-      {
-        icon: '�',
-        type: 'Website',
-        href: 'https://schenkwerk.com'
-      }
-    ]  
+    video: null
+  },
+  {
+    title: 'AI Trainer @ BFI Wien',
+    description: 'Leitung & Entwicklung von Kursen zu AI Agents & Vibe Coding',
+    href: 'https://www.bfi.wien/kurs/2831/KB002120/ai-agents-prozesse-im-arbeitsalltag-mit-kiagenten-automatisieren/25BTDB0213',
+    dates: '2024 - Present',
+    tags: ['AI', 'Vibe Coding', 'AI Agents', 'BFI', 'Kursleitung'],
+    image: '/BFI.png',
+    video: null
   }
 ];
 
@@ -39,8 +40,7 @@ function HustleCard({
   dates,
   tags,
   image,
-  video,
-  links
+  video
 }) {
   const [isClient, setIsClient] = useState(false);
 
@@ -49,8 +49,8 @@ function HustleCard({
   }, []);
 
   return (
-    <Card className="flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full w-full">
-      <Link href={href} className="cursor-pointer">
+    <Link href={href} target="_blank" className="block h-full">
+      <Card className="flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full w-full cursor-pointer">
         {isClient && video ? (
           <video
             src={video}
@@ -69,46 +69,32 @@ function HustleCard({
             className="h-72 w-full overflow-hidden object-cover object-top"
           />
         ) : null}
-      </Link>
-      <CardHeader className="px-4 md:px-6 py-3 md:py-4">
-        <div className="space-y-2">
-          <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
-          <time className="font-sans text-xs md:text-sm text-muted-foreground">{dates}</time>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm md:text-base text-muted-foreground dark:prose-invert">
-            {description}
-          </Markdown>
-        </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-4 md:px-6">
-        {tags && tags.length > 0 && (
-          <div className="mt-3 md:mt-4 flex flex-wrap gap-1 md:gap-2">
-            {tags.map((tag) => (
-              <Badge
-                className="px-2 md:px-3 py-1 text-xs md:text-sm"
-                variant="secondary"
-                key={tag}
-              >
-                {tag}
-              </Badge>
-            ))}
+        <CardHeader className="px-4 md:px-6 py-3 md:py-4">
+          <div className="space-y-2">
+            <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
+            <time className="font-sans text-xs md:text-sm text-muted-foreground">{dates}</time>
+            <Markdown className="prose max-w-full text-pretty font-sans text-sm md:text-base text-muted-foreground dark:prose-invert">
+              {description}
+            </Markdown>
           </div>
-        )}
-      </CardContent>
-      <CardFooter className="px-4 md:px-6 pb-4 md:pb-6">
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-2 md:gap-3">
-            {links.map((link, idx) => (
-              <Link href={link.href} key={idx} target="_blank">
-                <Badge variant="outline" key={idx} className="flex gap-2 px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm">
-                  {link.icon}
-                  {link.type}
+        </CardHeader>
+        <CardContent className="mt-auto flex flex-col px-4 md:px-6 pb-4 md:pb-6">
+          {tags && tags.length > 0 && (
+            <div className="mt-3 md:mt-4 flex flex-wrap gap-1 md:gap-2">
+              {tags.map((tag) => (
+                <Badge
+                  className="px-2 md:px-3 py-1 text-xs md:text-sm"
+                  variant="secondary"
+                  key={tag}
+                >
+                  {tag}
                 </Badge>
-              </Link>
-            ))}
-          </div>
-        )}
-      </CardFooter>
-    </Card>
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
 
@@ -117,7 +103,7 @@ export default function SideHustles() {
     <div className="mx-auto">
       <h2 className="mb-8 md:mb-12 text-3xl md:text-4xl font-bold">🚴 Side Hustles</h2>
       <div className="flex justify-center">
-        <div className="max-w-lg w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
           {hustles.map((hustle, index) => (
             <HustleCard key={index} {...hustle} />
           ))}

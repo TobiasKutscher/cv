@@ -1,30 +1,25 @@
-import Link from 'next/link'
+"use client";
 
-export const metadata = {
-  title: 'Impressum - ByteBakery UG (haftungsbeschränkt)',
-  description: 'Impressum von ByteBakery UG (haftungsbeschränkt)',
-}
+import Link from 'next/link';
+import { Button } from '../../components/ui/button';
+import { Home as HomeIcon } from 'lucide-react';
 
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-12 md:px-10 lg:px-12 flex justify-center">
-      <section className="w-full max-w-3xl bg-white/90 border border-slate-200 rounded-2xl shadow-sm px-6 sm:px-10 py-10 space-y-8">
-        <div className="flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="inline-flex items-center text-xs sm:text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 sm:px-4 py-2 rounded-full shadow-sm transition-colors"
-          >
-            <span className="mr-2 text-base">←</span>
-            Zurück zur Startseite
-          </Link>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">
-            Impressum
-          </h1>
-        </div>
+    <main className="min-h-screen px-6 py-16 md:px-12 lg:px-24 max-w-3xl mx-auto">
+      <div className="mb-8 flex justify-end">
+        <Link href="/">
+          <Button variant="outline" size="lg">
+            <HomeIcon className="mr-2 h-4 w-4" />
+            Back to Main Page
+          </Button>
+        </Link>
+      </div>
+      <h1 className="text-3xl font-bold mb-8">Impressum</h1>
 
-        <div className="space-y-6 text-sm leading-relaxed text-slate-700">
-          <div>
-            <h2 className="text-base font-semibold mb-1 text-slate-900">Angaben gemäß § 5 TMG</h2>
+      <section className="space-y-6 text-sm leading-relaxed">
+        <div>
+          <h2 className="font-semibold mb-1">Angaben gemäß § 5 TMG</h2>
           <p>ByteBakery UG (haftungsbeschränkt)</p>
           <p>Leinsamenweg 114</p>
           <p>50933 Köln</p>
@@ -42,22 +37,16 @@ export default function ImpressumPage() {
         </div>
 
         <div>
-            <h2 className="text-base font-semibold mb-1 text-slate-900">Kontakt</h2>
+          <h2 className="font-semibold mb-1">Kontakt</h2>
           <p>Tobias Kutscher</p>
           <p>
-            E-Mail:{' '}
-            <a
-              href="mailto:tobias-kutscher@gmx.at"
-              className="underline"
-            >
-              tobias-kutscher@gmx.at
-            </a>
+            E-Mail: <a href="mailto:tobias-kutscher@gmx.at" className="underline">tobias-kutscher@gmx.at</a>
           </p>
           <p>Telefon: +49 157 75881704</p>
         </div>
 
         <div>
-            <h2 className="text-base font-semibold mb-1 text-slate-900">EU-Streitschlichtung</h2>
+          <h2 className="font-semibold mb-1">EU-Streitschlichtung</h2>
           <p>
             Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
             <a
@@ -73,15 +62,15 @@ export default function ImpressumPage() {
         </div>
 
         <div>
-            <h2 className="text-base font-semibold mb-1 text-slate-900">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+          <h2 className="font-semibold mb-1">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
           <p>
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
             Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </div>
-        </div>
       </section>
     </main>
   )
 }
+
 
