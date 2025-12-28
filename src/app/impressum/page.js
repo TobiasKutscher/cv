@@ -40,7 +40,7 @@ export default function ImpressumPage() {
           <h2 className="font-semibold mb-1">Kontakt</h2>
           <p>Tobias Kutscher</p>
           <p>
-            E-Mail: <a href="mailto:tobias-kutscher@gmx.at" className="underline">tobias-kutscher@gmx.at</a>
+            E-Mail: <a href="mailto:hallo@tobiaskutscher.com" className="underline">hallo@tobiaskutscher.com</a>
           </p>
           <p>Telefon: +49 157 75881704</p>
         </div>
