@@ -26,9 +26,18 @@ const hustles = [
     title: 'AI Trainer @ BFI Wien',
     description: 'Leitung & Entwicklung von Kursen zu AI Agents & Vibe Coding',
     href: 'https://www.bfi.wien/kurs/2831/KB002120/ai-agents-prozesse-im-arbeitsalltag-mit-kiagenten-automatisieren/25BTDB0213',
-    dates: '2024 - Present',
+    dates: '2025 - Present',
     tags: ['AI', 'Vibe Coding', 'AI Agents', 'BFI', 'Kursleitung'],
     image: '/BFI.png',
+    video: null
+  },
+  {
+    title: 'Mieten oder Kaufen',
+    description: 'Online Rechner für Mieten oder Kaufen bei Immobilien',
+    href: 'https://mieten-oder-kaufen.com',
+    dates: '2026 - Present',
+    tags: ['Rechner', 'Immobilien', 'Österreich', 'Deutschland'],
+    image: '/mieten-oder-kaufen.png',
     video: null
   }
 ];
@@ -101,13 +110,11 @@ function HustleCard({
 export default function SideHustles() {
   return (
     <div className="mx-auto">
-      <h2 className="mb-8 md:mb-12 text-3xl md:text-4xl font-bold">🚴 Side Hustles</h2>
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-          {hustles.map((hustle, index) => (
-            <HustleCard key={index} {...hustle} />
-          ))}
-        </div>
+      <h2 className="mb-8 md:mb-12 text-3xl md:text-4xl font-bold text-center">🚴 Side Projects</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {hustles.map((hustle, index) => (
+          <HustleCard key={index} {...hustle} />
+        ))}
       </div>
     </div>
   );
