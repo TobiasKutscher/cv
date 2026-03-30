@@ -11,7 +11,7 @@ export default function Profile() {
         <div className='text-lg md:text-xl py-2 md:py-4 text-center md:text-left'>
         <ul className="list-none space-y-1">
             <li>· Senior Data Scientist @ Boehringer Ingelheim and</li>
-            <li>· Co-Founder of the software company ByteBakery UG (haftungsbeschränkt)</li>
+            <li>· Co-Founder of ByteBakery UG (haftungsbeschränkt)</li>
             <li>· AI Trainer @ BFI Wien</li>
             <li>· Expert in Agentic AI</li>
         </ul>
