@@ -9,11 +9,13 @@ export default function Profile() {
           <h1>Hi, I'm Tobias <span className="inline-block animate-wave">👋</span></h1>
         </div>
         <div className='text-lg md:text-xl py-2 md:py-4 text-center md:text-left'>
-        <p>
-            I am a Senior Data Scientist @ Boehringer Ingelheim and <br />
-            Co-Founder of the software company ByteBakery UG (haftungsbeschränkt) <br />
-            I currently live in Vienna, Austria 🇦🇹
-        </p>
+        <ul className="list-none space-y-1">
+            <li>· Senior Data Scientist @ Boehringer Ingelheim and</li>
+            <li>· Co-Founder of the software company ByteBakery UG (haftungsbeschränkt)</li>
+            <li>· AI Trainer @ BFI Wien</li>
+            <li>· Expert in Agentic AI</li>
+        </ul>
+        <p className="mt-3">I currently live in Vienna, Austria 🇦🇹</p>
         </div>
         <div className="mt-4">
          <CoolCTAButton />
